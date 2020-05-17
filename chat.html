@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+        integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <title>Chat | Kakao Clone</title>
+</head>
+
+<body>
+    <div class="status-bar">
+        <div class="status-bar__column">
+            <span class="status-bar__clock">13:54 </span>
+        </div>
+        <div class="status-bar__column">
+            <i class="fas fa-clock"></i>
+            <i class="fas fa-volume-mute"></i>
+            <i class="fas fa-wifi"></i>
+            <span class="status-bar__battery-level">100%</span>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header__header-column">
+            <div class="header__back-btn">
+                <a href="index.html">
+                    <i class="fas fa-arrow-left fa-2x"></i>
+                </a>
+            </div>
+            <h1 class="header__title">Best friend</h1>
+        </div>
+        <div class="header__header-column">
+            <span class="header__icon">
+                <i class="fas fa-search"></i>
+            </span>
+            <div class="header__icon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <main class="chat">
+        <ul class="chat__massages">
+            <span class="chat__timestamp">Monday, May, 2020</span>
+            <li class="incoming__massage massage">
+                <img src="image/dragonball.jpg" class="g-avatar massage avatar" />
+                <div class="massage__content">
+                    <span class="massage__author">Best Friend</span>
+                    <div class="massage__bubble">
+                        wow!
+                    </div>
+                </div>
+                <span class="massage__timestamp"></span>
+            </li>
+            <li class="incoming__massage massage">
+                <span class="massage__timestamp"></span>
+                <div class="massage__content">
+                    <div class="massage__bubble">
+                        wow!
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </main>
+    <div class="chat__write">
+        <div class="chat_write-column">
+            <i class="fas fa-plus-square"></i>
+        </div>
+        <div class="chat_write-column">
+            <input type="text" placeholder="send massage" class="chat__write-input">
+        </div>
+        <div class="chat_write-column">
+            <span class="chat__icon">
+                <i class="far fa-smile-wink"></i>
+            </span>
+            <span class="chat__icon">
+                <i class="fas fa-microphone"></i>
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>
