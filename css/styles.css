@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:400,600');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:300,400,600');
 @import "reset.css";
 @import "status-bar.css";
 @import "header.css";
 @import "nav-bar.css";
 @import "friend.css";
+@import "friends.css";
+@import "find.css";
+@import "more.css";
+@import "settings.css";
+@import "chat.css";
 
 *{
     box-sizing: border-box;
