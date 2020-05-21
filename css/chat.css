@@ -6,8 +6,10 @@
     padding:0px 20px;
 }
 .chat{
-    background-image: url("../image/dragonball.jpg");
+    background-image: url("../image/background.jpg");
     min-height: 100vh;
+    background-repeat:no-repeat;
+    background-size: cover;
 }
 .chat__write{
     position:fixed;
