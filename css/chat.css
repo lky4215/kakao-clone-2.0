@@ -1,29 +1,98 @@
-.chats__body{
-    padding:0;
+.header__wrapper{
+    position: fixed;
+    top:0px;
+    width: 100%;
+    padding: 5px 0px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+      rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
 }
+.chats__body{
+    padding:10px 0px;
+    padding-top: 100px;
+    
+}
+.chats__body{
+    background-image: url("../image/background.png");
+    min-height: 100vh;
+    
+}
+
 .chats__body .header,
 .chats__body .status__bar{
     padding:0px 20px;
 }
-.chat__screen{
-    background-image: url("../image/background.png");
-    min-height: 100vh;
-}
-.chat__write{
+
+.chat__write-container{
     position:fixed;
-    bottom: 50px;
-    width: 80%;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     left: 0;
     right: 0;
-    background-color: #f7f7f7;
-    padding:0px 20px;
-    border-radius: 40px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    
 
+}
+
+
+.chat__icon-left{
+    position: absolute;
+    left: 10px;
+}
+.chat__icon-right{
+    position: absolute;
+    right: 10px;
+}
+@keyframes float{
+    0%{  
+        box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+        0 18px 36px -18px rgba(0, 0, 0, 0.3),
+        0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    }
+    50%{
+        box-shadow: 0 30px 60px -60px rgba(50, 50, 93, 0.25),
+        0 18px 36px -18px rgba(0, 0, 0, 0.3),
+        0 -12px 36px -8px rgba(0, 0, 0, 0.025);}
+    100%{  
+        box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+        0 18px 36px -18px rgba(0, 0, 0, 0.3),
+        0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    }
+}
+
+
+.chat__write{
+    margin: 0 auto;
+    bottom:0;
+    width: 100%;
+    border-radius: 0;
+    padding: 20px 60px;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    transition: width 0.5s ease-in,width 0.5s ease-in,border-radius 0.5s ease-in, transform 0.5s ease-in-out;
+   
+}
+.chat__write:focus{
+    outline: none;
+    width: 80%;
+    transform: translateY(-100px);
+    border-radius: 40px;
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3),
+    0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    animation: float 3s linear infinite forwards;
+}
+.chat__icon{
+    font-size: 18px;
+    transition: opacity .3s ease-in-out;
+}
+
+.chat__write:focus ~ .chat__icon{
+    opacity: 0;
 }
 
 .chat__write i {
@@ -35,16 +104,7 @@
     
 }
 
-.chat_write-column input{
-    padding: 20px 20px;
-    width: 100%;
-    border: none;
-    font-size: 14px;
-     
-}
-.chat_write-column input:focus{
-    outline: none;
-}
+
 
 .chat__screen .chat__massages{
 
@@ -52,6 +112,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 0px 20px;
     padding-top: 30px;
 }
@@ -71,22 +132,19 @@
 
 .massage{
     display: flex;
-    align-items: center;
-    width: 50%;
+    align-items: flex-start;
+    margin-bottom: 20px;
 
 }  
 
-.massage .massage__content{
-    width: 80%;
- 
-}
+
 
 .incoming__massage{
     align-self: flex-start;
 
 }
 
-.sent_massage{
+.sent__massage{
     align-self: flex-end;
     
 }
@@ -94,7 +152,7 @@
 .incoming__massage img{
     width: 30px;
     border-radius: 15px;
-    margin-right: 20px;
+    margin-right: 15px;
 }
 
 .massage .massage__bubble{
@@ -103,4 +161,53 @@
       0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
     padding: 10px 20px;
     border-radius: 20px;
+    display: block;
+    color: white;
+    font-weight: 600;
+}
+
+.incoming__massage .massage__author{
+    margin-top: 10px;
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.incoming__massage .massage__bubble{
+    border-bottom-left-radius: 0px;
+    color: white;
+    background-image: linear-gradient(to right, #7b4397, #dc2430);
+}
+.sent__massage .massage__bubble{
+    border-bottom-right-radius: 0px;
+    background-image: linear-gradient(to left, #00c6ff, #0072ff);
+}
+
+@keyframes incomingAnim{
+    from{
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.incoming__massage {
+    animation: incomingAnim 1s infinite linear forwards;
+}
+
+@keyframes sentAnimation{
+    from{
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+.sent__massage{
+    animation: sentAnimation 1s infinite linear forwards;
 }
